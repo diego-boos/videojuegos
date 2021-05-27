@@ -1,79 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/424ce1386e.js" crossorigin="anonymous"></script>
-    <title>Games Shop</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/424ce1386e.js"
+            crossorigin="anonymous"></script>
+        <title>Games Shop</title>
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a href="#" class="navbar-brand">
-                    <img src="{{icono}}" width="50" height="50" class="img" alt="">
-                    <strong>Games Shop</strong>
-                </a>
+        <header>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container">
+                    <a href="#" class="navbar-brand">
+                        <img src="{{icono}}" width="50" height="50" class="img"
+                            alt="">
+                        <strong>Games Shop</strong>
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="py-5 container">
-        <div class="col-md-10 mx-auto" style="margin-bottom: 3em">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Desarrollador</th>
-                        <th>precio</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each juegos}}
-                    <tr>
-                        <td>{{ id }}</td>
-                        <td>
+        <section class="py-5 container">
+            <div class="col-md-10 mx-auto" style="margin-bottom: 3em">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Desarrollador</th>
+                            <th>Genero</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each juegos}}
+                        <tr>
+                            <td>{{ id }}</td>
+                            <td><a href="/show/{{id}}">{{ nombre }}</a></td>
+                            <td>{{descripcion}}</td>
+                            <td>{{ desarrollador }}</td>
+                            <td>{{ genero }}</td>
+                             <td>
+                                <img src="http://localhost:3000/uploads/{{id}}"
+                                    width="150" height="150">
+                            </td>
+                            <td>
+                                <a href="/edit/{{id}}" class="btn btn-secondary btn-lg
+                                    btn-block"><i class="fa fa-marker"></i></a>
+                                <br><br>
+                                <form action="/" method="POST">
 
-                            <img src="http://localhost:3000/uploads/{{id}}" width="150" height="150">
-
-
-
-                        </td>
-                        <td><a href="/">{{ nombre }}</a></td>
-                        <td>{{ desarrollador }}</td>
-                        <td>{{ precio }}</td>
-                        <td>
-                            <a href="/" class="btn btn-secondary btn-lg btn-block"><i class="fa fa-marker"></i></a>
-                            <br><br>
-                            <form action="/" method="POST">
-
-                                <button type="submit" class="btn btn-danger btn-lg btn-block"><i
-                                        class="fa fa-trash-alt"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-            <div class="text-center">
-                <a href="/" class="btn btn-success btn-lg btn-block">Crear Juego</a>
+                                    <button type="submit" class="btn btn-danger
+                                        btn-lg btn-block"><i
+                                            class="fa fa-trash-alt"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a href="nav-create" class="btn btn-success btn-lg btn-block">Crear
+                        Juego</a>
+                </div>
             </div>
-        </div>
-    </section>
-    <footer class="bg-light text-center text-lg-start text-white">
-        <div class="text-center p-3" style="background-color: black;">
-            Sitio desarrollado por Anderson Portilla y Diego Bolaños
-        </div>
-    </footer>
-</body>
+        </section>
+        <footer class="bg-light text-center text-lg-start text-white">
+            <div class="text-center p-3" style="background-color: black;">
+                Sitio desarrollado por Anderson Portilla y Diego Bolaños
+            </div>
+        </footer>
+    </body>
 
 </html>

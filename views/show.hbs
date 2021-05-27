@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+            />
+        <script
+            src="https://kit.fontawesome.com/424ce1386e.js"
+            crossorigin="anonymous"></script>
+        <title>Games Shop</title>
+    </head>
+    <body>
+        <center>
+        <div class="container p-4 mx-auto" >
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1>{{juego.nombre}} </h1>
+                    <img
+                        src="http://localhost:3000/uploads/{{juego.id}}"
+                        width="300"
+                        height="300"
+                        />
+
+                    <br />
+                    <p><strong>Sipnosis:</strong> {{juego.descripcion}}</p>
+                    <p><strong>Desarrollador:</strong> {{juego.desarrollador}}</p>
+                    <p><strong>Genero:</strong> {{juego.genero}}</p>
+                    <a
+                        type="button"
+                        class="btn btn-success"
+                        href="/"
+                        data-toggle="button"
+                        aria-pressed="false"
+                        autocomplete="off">
+                        Volver a Lista de Juegos
+                    </a>
+                </div>
+            </div>
+        </div>
+        </center>
+    </body>
+</html>
