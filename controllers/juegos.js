@@ -37,8 +37,8 @@ const crearJuego = (req,res) => {
   
   // EXTRAE LA IMAGEN, NOMBRE Y LA CARPETA DONDE SE VA A GUARDAR
   const { imagen } = req.files;
-  const nombre = imagen.name;
-  const uploadPath = path.join(__dirname, "../uploads/", nombre);
+  const nombreImagen = imagen.name;
+  const uploadPath = path.join(__dirname, "../uploads/", nombreImagen);
   
   // MUEVE LA IMAGEN A LA CARPETA
   imagen.mv(uploadPath, (err) => {
@@ -50,7 +50,7 @@ const crearJuego = (req,res) => {
   // EXTRAE LOS DATOS QUE SE ENVIAN POR EL FORMULARIO
   const datosFormulario = req.body;
   // CONSTRUYE EL OBJETO DEL JUEGO PARA PODER GRABARLO EN LA BASE DE DATOS
-  const datosJuego = {nombre: datosFormulario.nombre, desarrollador: datosFormulario.desarrollador, genero: datosFormulario.genero, imagen: nombre}
+  const datosJuego = {nombre: datosFormulario.nombre, descripcion: datosFormulario.descripcion, desarrollador: datosFormulario.desarrollador, genero: datosFormulario.genero, imagen: nombreImagen}
  
   req.getConnection((err, connection) => {
     connection.query('INSERT INTO juegos set ?', [datosJuego], (error, juegos) => {
