@@ -16,7 +16,6 @@ const getJuegos = (req, res) => {
 
 const showJuego = (req, res) => {
   const { id } = req.params;
-
   req.getConnection((err, connection) => {
     connection.query(
       `SELECT * FROM juegos WHERE id = ${id}`,
@@ -48,7 +47,6 @@ const crearJuego = (req, res) => {
   } else {
     nombreImagen = null
   }
-
   // EXTRAE LOS DATOS QUE SE ENVIAN POR EL FORMULARIO
   const datosFormulario = req.body;
   // CONSTRUYE EL OBJETO DEL JUEGO PARA PODER GRABARLO EN LA BASE DE DATOS
@@ -85,14 +83,13 @@ const showEditJuego = (req, res) => {
 };
 
 const editJuego = (req, res) => {
-  console.log(req.files);
+  /* console.log(req.files); */
   let nombreImagen = '';
   if (req.files !== null) {    
     // EXTRAE LA IMAGEN, NOMBRE Y LA CARPETA DONDE SE VA A GUARDAR
     const { imagen } = req.files;
     nombreImagen = imagen.name;
     const uploadPath = path.join(__dirname, "../uploads/", nombreImagen);
-    
     // MUEVE LA IMAGEN A LA CARPETA
     imagen.mv(uploadPath, (err) => {
       if (err) {
@@ -102,7 +99,6 @@ const editJuego = (req, res) => {
   } else {
     nombreImagen = null
   }
-
   const { id } = req.params;
   // EXTRAE LOS DATOS QUE SE ENVIAN POR EL FORMULARIO
   const datosFormulario = req.body;

@@ -42,7 +42,7 @@
                     {{#each juegos}}
                     <tr>
                         <td>{{ id }}</td>
-                        <td><a href="/show/{{id}}">{{ nombre }}</a></td>
+                        <td><a href="/show/{{id}}" class="btn btn-secondary btn-lg btn-block">{{ nombre }}</a></td>
                         <td>{{descripcion}}</td>
                         <td>{{ desarrollador }}</td>
                         <td>{{ genero }}</td>
@@ -50,8 +50,7 @@
                             <img src="http://localhost:3000/uploads/{{id}}" width="150" height="150">
                         </td>
                         <td>
-                            <a href="/nav-edit/{{id}}" class="btn btn-secondary btn-lg
-                                    btn-block"><i class="fa fa-marker"></i></a>
+                            <a href="/nav-edit/{{id}}" class="btn btn-secondary btn-lg btn-block"><i class="fa fa-marker"></i></a>
                             <br><br>
                             <a href="/delete/{{id}}" class="btn btn-danger
                                         btn-lg btn-block"><i class="fa fa-trash-alt"></i></a>
