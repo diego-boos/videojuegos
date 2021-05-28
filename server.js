@@ -21,7 +21,7 @@ app.use(
     mysql,{
       host: 'localhost',
       user: 'root',
-      password: '',
+      password: 'root',
       port: 3306,
       database: 'videojuegos',
     }, 'single'
