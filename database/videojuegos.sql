@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `juegos`;
 CREATE TABLE `juegos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(80) NOT NULL,
+  `descripcion` varchar(300) DEFAULT NULL,
   `desarrollador` varchar(80) NOT NULL,
-  `precio` varchar(80) NOT NULL,
+  `genero` varchar(80) NOT NULL,
   `imagen` varchar(80) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,6 @@ CREATE TABLE `juegos` (
 
 LOCK TABLES `juegos` WRITE;
 /*!40000 ALTER TABLE `juegos` DISABLE KEYS */;
-INSERT INTO `juegos` VALUES (1,'FIFA 2020','EA SPORTS','55000','rocky-balboa.jpg'),(2,'BATTLEFIELD V','EA™','85000',NULL),(3,'S.W: SQUADRONS','EA™','35000',NULL),(4,'DEATH STRANDING','KOJIMA PRODUCTIONS','75000',NULL);
 /*!40000 ALTER TABLE `juegos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 17:36:18
+-- Dump completed on 2021-05-27 19:13:04

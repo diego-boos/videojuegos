@@ -11,7 +11,7 @@
             crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/424ce1386e.js"
             crossorigin="anonymous"></script>
-        <title>Games Shop</title>
+        <title>Games World</title>
     </head>
     <body>
 
@@ -20,7 +20,7 @@
                 <div class="col-md-8 mx-auto">
                     <h1>Actualizar Juego</h1>
                     <div class="card card-body">
-                        <form action="/" method="POST"
+                        <form action="/edit/{{juego.id}}" method="POST"
                             enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="label" for="nombre">Nombre:
@@ -36,20 +36,26 @@
                                     required>{{ juego.descripcion }}</textarea>
                             </div><br>
                             <div class="form-group">
-                                <label class="label" for="categoria">Desarrollador:</label>
-                                <input type="text" name="categoria"
+                                <label class="label" for="desarrollador">Desarrollador:</label>
+                                <input type="text" name="desarrollador"
                                     class="form-control" value="{{
                                     juego.desarrollador }}" required>
                             </div><br>
                             <div class="form-group">
-                                <label class="label" for="foto">Imagen:</label>
+                                <label class="label" for="genero">Genero:</label>
+                                <input type="text" name="genero"
+                                    class="form-control" value="{{
+                                    juego.genero }}" required>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="label" for="imagen">Imagen:</label>
                                 <br>
                                 <img
                                     src="http://localhost:3000/uploads/{{juego.id}}"
                                     width="150" height="150">
                                 <br><br>
-                                <input type="file" name="foto"
-                                    class="form-control" required>
+                                <input type="file" name="imagen"
+                                    class="form-control">
                                 <br>
                             </div>
                             <div class="form-group">

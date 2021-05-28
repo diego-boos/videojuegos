@@ -28,28 +28,6 @@ const mostrarImagen = async (req, res = response) => {
   });
 };
 
-const cargarArchivos = (req, res) => {
-  console.log(req.files);
-  if (!req.files || Object.keys(req.files).length === 0 || !req.files.archivo) {
-    res.status(400).json({ msg: "No hay archivos que subir" });
-    return;
-  }
-
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-  const { archivo } = req.files;
-  const nombre = archivo.name;
-  const uploadPath = path.join(__dirname, "../uploads/", nombre);
-
-  // Use the mv() method to place the file somewhere on your server
-  archivo.mv(uploadPath, (err) => {
-    if (err) {
-      return res.status(500).json({ err });
-    }
-
-    res.json("El archivo se subió a" + uploadPath);
-  });
-};
-
 const actualizarImagen = (req, res) => {
   const { id } = req.params;
 
@@ -83,8 +61,5 @@ const actualizarImagen = (req, res) => {
   });
 };
 
-module.exports = {
-  mostrarImagen,
-  cargarArchivos,
-  actualizarImagen,
-};
+module.exports = mostrarImagen;
+
